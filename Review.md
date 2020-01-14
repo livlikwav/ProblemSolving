@@ -1,6 +1,7 @@
 # 목차
 (BOJ15464)[#BOJ15464]
 (BOJ16769)[#BOJ16769]
+(BOJ16770)[#BOJ16770]
 
 # BOJ15464
 ### 새로 배운 개념
@@ -13,7 +14,7 @@
 
 
 # BOJ16769
-풀이 정리
+### 풀이 정리
 - 또 까먹음 > bufferedwriter에서 Integer.parseInt()로 바꿔서 write해야함
 - 자바 Iterator, 자바 Collections 에 대하여 공부해보자
 - Collections와 자바 Array랑 다른 거인가봄. 그래서 Array에 대해서는 Iterator 사용 불가능
@@ -21,3 +22,12 @@
 - 문제 자체는 간단하게 시뮬레이션으로 풀었다.
 - 기존의 switch문을 개선하여 하나의 문장으로 줄였다. (분기하나 줄임)
 - loop % 3 + 1 >> (loop + 1) % 3
+
+# BOJ16770
+### 풀이 정리
+- bw 할때 String으로 변환해줘야하는거 잊지말기
+- br, bw, StringTokenizer 잘 사용하기
+- JAVA Arrays 에서 MIN, MAX 찾는 두가지 방법 
+- 1) 기본 for문, 2) Arrays.sort(어레이) 한 후 array[array.length - 1]이 MAX
+- 이번에도 역시 Test driven 하게  한 파트 추가할때마다 제대로 되는지 cmd 출력하여 확인함!
+- JAVA ArrayList를 언제 사용해야할지 생각, 미리 공부
