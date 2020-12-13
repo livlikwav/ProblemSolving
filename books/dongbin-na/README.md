@@ -173,4 +173,10 @@ x = True or True
 x = True and False
 x = not True
 
+# python ord()
+# The ord() function returns an integer representing the Unicode character.
+# By the way, the ord() function is the inverse of the Python chr() function.
+# 유니코드 문자 정수를 반환함.
+# abcdef.. 에서 차이 갯수 세는지 등에 사용함
+diff = int(ord(input_data[0])) - int(ord('a')) + 1
 ```
