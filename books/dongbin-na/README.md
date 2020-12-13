@@ -9,6 +9,7 @@
     - [for-loop](#for-loop)
     - [sort](#sort)
     - [operators](#operators)
+    - [Data-type & built-in funcs](#data-type--built-in-funcs)
 
 ## Python syntax
 
@@ -148,4 +149,28 @@ list.reverse() -> None
 # 나머지 연산
 int(A / B)
 A // B
+```
+
+### Data-type & built-in funcs
+
+```python
+
+# iterables 길이
+lis = [1, 2, 3]
+len(lis)
+>> 3
+
+# list + list 는 각 요소의 합이 아니다. 리스트 확정
+A = [1, 2]
+B = [2, 1]
+A + B
+>> [1, 2, 2, 1]
+# list 각 요소의 합은, list comprehension을 사용하면 편함
+[A[i] + B[i] for i in range(len(A))]
+
+# 파이썬의 and, or, not > 그냥 영어로 쓰기. || 같은거 아님
+x = True or True
+x = True and False
+x = not True
+
 ```
