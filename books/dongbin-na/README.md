@@ -3,46 +3,68 @@
 이것이 코딩테스트다 파이썬 - 나동빈 저
 
 - [dongbin-na](#dongbin-na)
-  - [Python syntax](#python-syntax)
-    - [input 개선](#input-개선)
-    - [input 개선 2](#input-개선-2)
+  - [중요한 Python 테크닉](#중요한-python-테크닉)
+    - [input()](#input)
+    - [sys.stdin.readline()](#sysstdinreadline)
+  - [문제별 테크닉](#문제별-테크닉)
+    - [N, M 2차원 행렬맵](#n-m-2차원-행렬맵)
+  - [공부 팁](#공부-팁)
+    - [파일로 표준 입력받기](#파일로-표준-입력받기)
+  - [Python 기초](#python-기초)
+    - [중요](#중요)
     - [for-loop](#for-loop)
     - [sort](#sort)
     - [operators](#operators)
     - [Data-type & built-in funcs](#data-type--built-in-funcs)
 
-## Python syntax
+## 중요한 Python 테크닉
 
-### input 개선
+### input()
 
 ```python
-# input example
-# 1 2 3 4 5
+# int 1
+n = int(input())
 
-# int 객체 입력받을 때
-import sys
-n = int(sys.stdin.readline())
+# 2-d string list (sparse)
+# 2-d string list (dense)
+data = [input() for _ in range(row)]
 
-# 한 줄에 여러가지 입력이 필요할 때
-import sys
-n = sys.stdin.readline().split() # ["1", "2," ...]
+# 2-d int list (sparse)
+data = [list(map(int, input().split())) for _ in range(row)]
 
-# python map(function, iterable) 함수 사용
-import sys
-n = list(map(int, sys.stdin.readline().split())) # [1, 2, 3, 4, 5]
-# map()은 map 객체를 반환한다
-# 따라서 list()로 다시 list로 형변환
-
-# sys.stdout.write 출력
-import sys
-print(1)
-sys.stdout.write(str(1) + '\n')
-# stdout 주의할 점
-# 1) str로 꼭 변환해줘야한다
-# 2) 개행문자를 사용해서 개행해야한다. print()와 다름
+# 2-d in list (dense) **
+data = []
+for i in range(row):
+  graph.append(list(map(int, input())))
 ```
 
-### input 개선 2
+### sys.stdin.readline()
+
+```python
+# sys.stdin.readline이 input()보다 더 빠르다
+import sys
+n = int(sys.stdin.readline())
+```
+
+## 문제별 테크닉
+
+### N, M 2차원 행렬맵
+
+```python
+# 상하좌우 검사
+x = 0
+y = 0
+dx = [-1, +1, 0, 0]
+dy = [0, 0, -1, +1]
+
+for i in range(4):
+  nx = x + dx[i]
+  ny = y + dy[i]
+```
+
+## 공부 팁
+
+### 파일로 표준 입력받기
 
 [참고 링크](https://itcrowd2016.tistory.com/81)
 
@@ -54,55 +76,14 @@ import sys
 sys.stdin = open("input.txt", "r")
 ```
 
-python input best practices
+## Python 기초
 
-```python
-# 1
-N = int(input())
-print(N)
+### 중요
 
-# 2
-print(input().split()) # string list
-
-# 3
-# 내가 입력받을 데이터 갯수 정해져있을 때만 사용
-N, M = map(int, input().split()) # int list
-print(N, M) # 1 2
-
-# 4
-# 데이터 갯수 안 정해져 있을때
-arr = list(map(int, input().split()))  # 그냥 list 자체로 받아옴
-print(arr)
-
-# 5
-# 공백문자 없는 숫자 리스트
-print(input()) # 한 줄을 그냥 string으로 받아옴
-# 12345
-
-print(list(input())) # string 한 줄에 list 씌우면
-# ['1', '2', ...]
-
-# 6
-# 공백문자 없는 숫자를 int list로 입력받기
-arr = list(map(int, input()))
-print(arr)
-# [1, 2, ...]
-
-# 7
-# N행으로 이루어진 2차원 배열 입력받기
-N = int(input())
-
-arr = [list(map(int, input().split())) for _ in range(N)]
-# list comprehension을 통해 편리하게 list 작성
-```
-
-- 알게된 점
-  - input()
-    - 무조건 한 줄을 string으로 다 읽어온다.
-  - Python String
-    - 그대로 map(function, iterable)에 넣을 수 있다
-    - 근데 python에 char 타입은 없음에 유의
-  - list comprehension(리스트 내포)
+- input()은 한 줄을 String으로 읽어온다
+- String은 index를 통해 값 변경 불가능
+  - replace()는 있는데, 이건 문자열 매칭 후 변경
+- Python에 char 타입은 없다
 
 ### for-loop
 
