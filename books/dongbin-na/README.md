@@ -6,6 +6,7 @@
   - [중요한 Python 테크닉](#중요한-python-테크닉)
     - [input()](#input)
     - [sys.stdin.readline()](#sysstdinreadline)
+    - [functions](#functions)
   - [문제별 테크닉](#문제별-테크닉)
     - [N, M 2차원 행렬맵](#n-m-2차원-행렬맵)
   - [공부 팁](#공부-팁)
@@ -44,6 +45,14 @@ for i in range(row):
 # sys.stdin.readline이 input()보다 더 빠르다
 import sys
 n = int(sys.stdin.readline())
+```
+
+### functions
+
+```python
+# List summation
+l = [1, 2, 3, 4, 5]
+print(sum(l))
 ```
 
 ## 문제별 테크닉

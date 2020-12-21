@@ -39,6 +39,8 @@ print(sum)
 이번에도 i가 0부터 시작하기때문에 i == K면 break해야함!!
 실수할 뻔 했다
 
+* python sum(list)하면 알아서 리스트 총합 구해줌!!
+
 * 이 문제는 그냥 range(k)로 해도 됐다!!
 <Answer>
 n, k = map(int, input().split())
