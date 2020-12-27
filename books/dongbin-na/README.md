@@ -4,6 +4,7 @@
 
 - [dongbin-na](#dongbin-na)
   - [중요한 Python 테크닉](#중요한-python-테크닉)
+    - [문자열 관련 built-in](#문자열-관련-built-in)
     - [input()](#input)
     - [sys.stdin.readline()](#sysstdinreadline)
     - [functions](#functions)
@@ -19,6 +20,23 @@
     - [Data-type & built-in funcs](#data-type--built-in-funcs)
 
 ## 중요한 Python 테크닉
+
+### 문자열 관련 built-in
+
+```python
+x.isalpha()
+# 해당 변수가 알파벳이면 True, 숫자 등의 값으로 아니면 False
+
+strings =['a', 'f', 'b', 'c', 'e']
+strings.sort()
+# string값이 들어있는 list도 정렬 가능
+
+print(''.join(strings))
+# string.join(iterable)
+
+# The join() string method returns a string by joining all the elements of an iterable, separated by a string separator.
+# 주의! 호출하는 string객체가 separator로 사용된다
+```
 
 ### input()
 
