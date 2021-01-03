@@ -4,6 +4,7 @@
 
 - [dongbin-na](#dongbin-na)
   - [중요한 Python 테크닉](#중요한-python-테크닉)
+    - [list slicing 특이한 점](#list-slicing-특이한-점)
     - [문자열 관련 built-in](#문자열-관련-built-in)
     - [input()](#input)
     - [sys.stdin.readline()](#sysstdinreadline)
@@ -20,6 +21,20 @@
     - [Data-type & built-in funcs](#data-type--built-in-funcs)
 
 ## 중요한 Python 테크닉
+
+### list slicing 특이한 점
+
+list slicing에서 list[a:b]에서  
+b가 len(list)를 한참 초과해도  
+오류가 나지 않고 마지막 값까지만 slicing 해준다  
+예를 들어,  
+
+```python
+ 
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+arr[8:100]
+>> [9, 10]
+```
 
 ### 문자열 관련 built-in
 
