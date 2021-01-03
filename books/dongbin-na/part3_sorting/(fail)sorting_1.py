@@ -1,4 +1,7 @@
 '''
+틀린 이유: 너무 어렵게 구현했다.
+JAVA에서 처럼 compare 함수를 새로 구현해서 사용했으면 훨씬 쉬웠을 일...
+
 12
 Junkyu 50 60 100
 Sangkeun 80 60 50
@@ -15,19 +18,23 @@ Taewhan 50 60 90
 '''
 N = int(input())
 data = [input().split() for _ in range(N)]
+for i in range(len(data)):
+    data[i][1] = int(data[i][1])
+    data[i][2] = int(data[i][2])
+    data[i][3] = int(data[i][3])
 
 # debug
-print(N)
-print(data)
+# print(N)
+# print(data)
 
 def get_a1(array):
     result = []
-    a1 = [[]*101]
+    a1 = [[] for _ in range(101)]
     for i in range(len(array)):
         a1[array[i][1]].append(array[i])
     for i in range(101):
         if len(a1[i]) == 1:
-            result.append(a1[i][0])
+            result.append(a1[i][0][0])
         elif len(a1[i]) >= 2:
             vals = get_a2(a1[i])
             for val in vals:
@@ -36,12 +43,12 @@ def get_a1(array):
 
 def get_a2(array):
     result = []
-    a2 = [[]*101]
+    a2 = [[] for _ in range(101)]
     for i in range(len(array)):
         a2[array[i][2]].append(array[i])
     for i in range(101):
         if len(a2[i]) == 1:
-            result.append(a2[i][0])
+            result.append(a2[i][0][0])
         elif len(a2[i]) >= 2:
             vals = get_a3(a2[i])
             for val in vals:
@@ -50,23 +57,25 @@ def get_a2(array):
 
 def get_a3(array):
     result = []
-    a3 = [[]*101]
+    a3 = [[] for _ in range(101)]
     for i in range(len(array)):
         a3[array[i][3]].append(array[i])
     for i in range(101):
         if len(a3[i]) == 1:
-            result.append(a3[i][0])
+            result.append(a3[i][0][0])
         elif len(a3[i]) >= 2:
             temp = []
             for x in a3[i]:
-                temp.append(a3[i][0])
+                temp.append(x)
             temp.sort() # 사전 순이 증가하는 순서
             for val in temp:
                 result.append(temp)
     return result
 
 result = get_a1(data)
-print(''.join(result))
+# print(''.join(result))
+print(len(result))
+print(result)
 
 '''
 n = int(input())
