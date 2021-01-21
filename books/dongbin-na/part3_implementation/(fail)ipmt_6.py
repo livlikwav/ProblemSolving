@@ -1,3 +1,31 @@
+'''
+<핵심 아이디어>
+제한시간 5초에, 명령 수 최대 1000이면
+딱 O(N^3)이 가능할 것 같고 + 구현 문제면
+앞으로는 일단 전수조사로 구현 후 나중에 생각해도 될 것 같다!
+
+내 계산 상으로는 Python 1s가 2e^7라면
+5s는 1e^8로 N^3인 1e^9에는 못미쳐서 안될 것 같았는데,
+충분하댄다. 위와 같은 어림짐작은 어림짐작일 뿐인가봄.
+너무 클 경우에만 Big O 최적화를 생각하기.
+
+<실수한 점>
+문제 이해를 잘못한게,
+data를 업데이트하고 조사하지말고, answer만 조사하면 됐다.
+
+또한 x,y 에 0, 1
+즉 기둥과 보 둘다 존재 가능한데,
+그게 안되도록 구현했기 때문에 무조건 틀림
+
+
+
+다 풀었을때 시간도 제한시간 50분 훨씬 넘은,
+거의 1시간 20분 수준이었다.
+또한, 프로그래머스 실행에서는 성공하였으나,
+문제 제출했더니 싹 다 틀림...
+구현.. 멀고 험하구나..
+'''
+
 # build_frame = [[1, 0, 0, 1], [1, 1, 1, 1], [2, 1, 0, 1], [2, 2, 1, 1], [5, 0, 0, 1], [5, 1, 0, 1], [4, 2, 1, 1], [3, 2, 1, 1]]
 # n = 5
 
@@ -133,3 +161,35 @@ def solution(n, build_frame):
     return result
 
 # print(solution(n, build_frame))
+
+'''
+<Answer>
+# 현재 설치된 구조물이 '가능한' 구조물인지 확인하는 함수
+def possible(answer):
+    for x, y, stuff in answer:
+        if stuff == 0: # 설치된 것이 '기둥'인 경우
+            # '바닥 위' 혹은 '보의 한쪽 끝부분 위' 혹은 '다른 기둥 위'라면 정상
+            if y == 0 or [x - 1, y, 1] in answer or [x, y, 1] in answer or [x, y - 1, 0] in answer:
+                continue
+            return False # 아니라면 거짓(False) 반환
+        elif stuff == 1: # 설치된 것이 '보'인 경우
+            # '한쪽 끝부분이 기둥 위' 혹은 '양쪽 끝부분이 다른 보와 동시에 연결'이라면 정상
+            if [x, y - 1, 0] in answer or [x + 1, y - 1, 0] in answer or ([x - 1, y, 1] in answer and [x + 1, y, 1] in answer):
+                continue
+            return False # 아니라면 거짓(False) 반환
+        return True
+
+def solution(n, build_frame):
+    answer = []
+    for frame in build_frame: # 작업의 개수는 최대 1,000개
+        x, y, stuff, operate = frame
+        if operate == 0: # 삭제하는 경우
+            answer.remove([x, y, stuff]) # 일단 삭제를 해본 뒤에
+            if not possible(answer): # 가능한 구조물인지 확인
+                answer.append([x, y, stuff]) # 가능한 구조물이 아니라면 다시 설치
+        if operate == 1: # 설치하는 경우
+            answer.append([x, y, stuff]) # 일단 설치를 해본 뒤에
+            if not possible(answer): # 가능한 구조물인지 확인
+                answer.remove([x, y, stuff]) # 가능한 구조물이 아니라면 다시 제거
+    return sorted(answer) # 정렬된 결과를 반환
+'''
