@@ -32,7 +32,7 @@ cnt = 0
 for i in range(n):
     nx, ny = data[i]
     
-    if nx > y:
+    if nx >= y: # 시작시간과 끝나는시간이 같아도 바로 시작함
         cnt += 1
         x = nx
         y = ny
