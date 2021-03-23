@@ -1,24 +1,32 @@
 n, m = map(int, input().split())
-data = list(map(int, input().split()))
+data = [0] + list(map(int, input().split()))
 
 INF = int(1e9)
-dp = [[INF] * m for _ in range(n)]
+dp = [[INF] * (m + 1) for _ in range(n + 1)] # 둘다 1 ~ n, 1 ~ m 개 사용한다
 
-# print(n, m)
-# print(data)
-# print(dp)
+# 초기화
+for i in range(1, n+1):
+    dp[i][1] = sum(data[1:i+1])
+# for line in dp:
+#     print(line)
 
-dp[m-1][m] = 1
-for x in range(m, n): # n은 index m-1 부터 n-1까지
-    for y in range(1, m+1): # m은 1개부터 m개 까지
-        for step in range(0, x-y):
-            start = x - step
-            new = sum(data[start:])
+# dp
+for i in range(1, n+1):
+    for j in range(2, m+1): # 무조건 m개 까지만 확인하면 됨
+        # j가 현재 i보다 클 경우 멈춤
+        if j > i:
+            break
+        
+        for step in range(0, i - j + 1):
+            start = i - step
+            new = sum(data[start:i+1])
 
-            if start - 1 < m - 2:
-                continue
-            if m - 1 < 1:
-                continue
+            temp = max(new, dp[start-1][j - 1])
 
-            new_dp = max(new, dp[start - 1][y - 1])
-            dp[x][y] = min(dp[x][y], new_dp)
+            if dp[i][j] > temp:
+                dp[i][j] = temp
+
+print(dp[n][m])
+
+# for line in dp:
+#     print(line)
