@@ -1,3 +1,8 @@
+'''
+28분 걸림
+오랜만에 해서 좀 verbose한 답이긴 함
+'''
+
 def solution(board, moves):
     # 행렬의 높이를 저장한다
     height = len(board)
