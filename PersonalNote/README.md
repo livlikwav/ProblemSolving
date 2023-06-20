@@ -6,6 +6,12 @@ personal note for problem solving
 
 - [ ] Stack
 - [ ] Queue
+- [ ] PriorityQueue
+- [ ] Min Heap
+- [ ] Max Heap
+- [ ] Tree
+- [ ] BinarySearchTree
+- [ ] Trie
 
 ## Algorithms
 
