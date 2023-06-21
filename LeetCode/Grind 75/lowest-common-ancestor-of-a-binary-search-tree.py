@@ -8,7 +8,9 @@
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         """
-        My solution, 00:41:45 elapsed
+        My solution, 00:41:45 elapsed, key idea: BST, two-pointers
+        TC O(2logN), SC O(2logN * size(TreeNode) + (N+2) * size(TreeNode))
+        하지만 아래 most voted 를 보면서 LCA(LowestCommonAncestor) 최적의 알고리즘이 있단걸 깨달았다;;;
         """
         def bs(start: 'TreeNode', target: int) -> List['TreeNode']:
             result = []
@@ -46,7 +48,7 @@ class Solution:
         return None
 
         """
-        I misunderstood problem. LCA is not about val, just most closed common ancestor
+        I misunderstood problem. LCA is not about val, just most nearest common ancestor
         """
         # def bs(start: 'TreeNode', target: int) -> List[int]:
         #     result = []
@@ -78,3 +80,15 @@ class Solution:
         #             min_node = x
 
         # return min_node
+
+        """
+        Most voted #1: p 와 q 가 무조건 존재하고, BST 라는 제약조건이 있어서 edge case 체크없이 다음과 같이 풀 수 있다.
+        KEY IDEA = 둘 다 만족하지 않는 순간 양쪽으로 분기하는것이므로, LCA 는 그 분기하는 지점이 된다.
+        """
+        while True:
+            if root.val > p.val and root.val > q.val:
+                root = root.left
+            elif root.val < p.val and root.val < q.val:
+                root = root.right
+            else:
+                return root
