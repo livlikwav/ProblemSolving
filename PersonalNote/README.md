@@ -15,6 +15,8 @@ personal note for problem solving
 
 ## Algorithms
 
+- [ ] Quick Select
+
 ### Search
 
 - [x] DFS
