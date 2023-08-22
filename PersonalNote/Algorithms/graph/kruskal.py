@@ -1,4 +1,5 @@
 # kruskal is greedy algorithm for find MST(Minumum Spanning Tree)
+# TC O(ElogE), E = #edges, union-find 시간 복잡도가 정렬 시간 복잡도보다 낮아서 생략된다.
 def find_parent(parent, x):
     if parent[x] != x:
         parent[x] = find_parent(parent, parent[x])
