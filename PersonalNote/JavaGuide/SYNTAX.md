@@ -1,8 +1,18 @@
-# Syntax overview
+# Syntax
+
+## Lesson learned
+
+```java
+// Array
+int[] score = new int[] {50, 60, 70, 80, 90};
+int[] score = {50, 60, 70, 80, 90}; // 선언과 대입을 같이 하는 경우 new 생략 가능
+```
+
+## overview
 
 > gpt4o
 
-## Hello World 출력
+### Hello World 출력
 
 Java 프로그램의 기본 구조입니다. 모든 Java 코드는 클래스 내부에 작성되어야 하며, 프로그램 시작점은 `main` 메서드입니다.
 
@@ -14,7 +24,7 @@ public class Main {
 }
 ```
 
-## 변수 선언과 기본 자료형
+### 변수 선언과 기본 자료형
 
 Java에서 변수는 타입을 명시해야 합니다.
 
@@ -26,7 +36,7 @@ char letter = 'A';     // 문자형
 String text = "Java";  // 문자열
 ```
 
-## 조건문 (if-else 문)
+### 조건문 (if-else 문)
 
 Java의 조건문입니다.
 
@@ -39,7 +49,7 @@ if (age >= 18) {
 }
 ```
 
-## 반복문 (for, while)
+### 반복문 (for, while)
 
 Java에서 `for`와 `while` 반복문은 다음과 같습니다.
 
@@ -70,7 +80,7 @@ for (int num : numbers) {
 }
 ```
 
-## 메서드 (Method) 선언과 호출
+### 메서드 (Method) 선언과 호출
 
 Java는 메서드를 사용해 코드를 모듈화합니다.
 
@@ -94,7 +104,7 @@ public class Main {
 }
 ```
 
-## 배열 (Array)
+### 배열 (Array)
 
 Java에서는 배열을 `[]`로 선언합니다.
 
@@ -103,7 +113,7 @@ int[] numbers = {1, 2, 3, 4, 5};
 System.out.println(numbers[0]); // 1 출력
 ```
 
-## 클래스와 객체
+### 클래스와 객체
 
 Java는 객체 지향 언어이므로 클래스를 통해 객체를 생성합니다.
 

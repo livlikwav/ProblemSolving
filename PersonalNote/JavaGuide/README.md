@@ -1,5 +1,10 @@
 # Java
 
+## Lesson learned
+
+- Java 는 매 statement 마다 ;(semicolon) 을 붙여야 함.
+- Java 는 Go `:=` 처럼 암묵적 변수 타입 선언 불가능함. 변수 초기화 시에도 변수 타입 명시해야함.
+
 ## Overview
 
 > gpt4o
@@ -54,8 +59,3 @@
      List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
      numbers.forEach(n -> System.out.println(n));
      ```
-
-## Lesson learned
-
-- Java 는 매 statement 마다 ;(semicolon) 을 붙여야 함.
-- Java 는 Go `:=` 처럼 암묵적 변수 타입 선언 불가능함. 변수 초기화 시에도 변수 타입 명시해야함.
