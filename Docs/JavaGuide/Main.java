@@ -1,4 +1,4 @@
-package PersonalNote.JavaGuide;
+package docs.JavaGuide;
 
 import java.io.BufferedReader;
 import java.io.IOException;
