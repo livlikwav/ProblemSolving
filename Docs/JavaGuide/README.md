@@ -9,12 +9,6 @@
 
 > gpt4o
 
-### 1. 기본 자료형
-
-- Java는 기본형 데이터 타입이 있고, 모두 소문자로 시작합니다.
-  - `int`, `double`, `float`, `boolean`, `char`, `byte`, `short`, `long`
-- 객체 타입과 다르게 기본형은 메모리 효율이 좋습니다.
-
 ### 2. 클래스와 객체
 
 - Java는 객체 지향 프로그래밍 언어로, 모든 코드가 클래스 안에 있어야 합니다.
@@ -25,11 +19,6 @@
 - 조건문: `if`, `else if`, `else`
 - 반복문: `for`, `while`, `do-while`
 - 향상된 for문: `for (Type item : collection) { ... }`
-
-### 4. 컬렉션 프레임워크
-
-- List, Set, Map 등의 인터페이스와 이를 구현하는 클래스들 (`ArrayList`, `HashSet`, `HashMap` 등)은 자주 사용됩니다.
-- List는 순서가 있는 데이터, Set은 중복되지 않는 데이터, Map은 키-값 쌍의 데이터 관리에 사용됩니다.
 
 ### 5. 예외 처리
 

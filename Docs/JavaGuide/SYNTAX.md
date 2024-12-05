@@ -1,13 +1,5 @@
 # Syntax
 
-## Lesson learned
-
-```java
-// Array
-int[] score = new int[] {50, 60, 70, 80, 90};
-int[] score = {50, 60, 70, 80, 90}; // 선언과 대입을 같이 하는 경우 new 생략 가능
-```
-
 ## overview
 
 > gpt4o
@@ -22,18 +14,6 @@ public class Main {
         System.out.println("Hello, World!");
     }
 }
-```
-
-### 변수 선언과 기본 자료형
-
-Java에서 변수는 타입을 명시해야 합니다.
-
-```java
-int number = 10;       // 정수형
-double decimal = 3.14; // 실수형
-boolean isJavaFun = true; // 논리형
-char letter = 'A';     // 문자형
-String text = "Java";  // 문자열
 ```
 
 ### 조건문 (if-else 문)
@@ -78,39 +58,6 @@ int[] numbers = {1, 2, 3, 4, 5};
 for (int num : numbers) {
     System.out.println(num);
 }
-```
-
-### 메서드 (Method) 선언과 호출
-
-Java는 메서드를 사용해 코드를 모듈화합니다.
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        sayHello();
-        int result = add(3, 5);
-        System.out.println("결과: " + result);
-    }
-
-    // 매개변수가 없는 메서드
-    public static void sayHello() {
-        System.out.println("Hello!");
-    }
-
-    // 매개변수가 있는 메서드
-    public static int add(int a, int b) {
-        return a + b;
-    }
-}
-```
-
-### 배열 (Array)
-
-Java에서는 배열을 `[]`로 선언합니다.
-
-```java
-int[] numbers = {1, 2, 3, 4, 5};
-System.out.println(numbers[0]); // 1 출력
 ```
 
 ### 클래스와 객체
