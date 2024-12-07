@@ -20,6 +20,19 @@ public class xQueue {
         v = queue.poll();
         System.out.println(v);
     }
+
+    /*
+     * q.offer(v);
+     * v = q.poll();
+     */
+    static void LinkedList() {
+        Queue<Integer> q = new java.util.LinkedList<>();
+        q.offer(1);
+        q.offer(2);
+
+        int v = q.poll();
+        System.out.println(v);
+    }
 }
 
 /*

@@ -2,6 +2,7 @@ package Docs.JavaGuide.DataStructure;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class xArray {
     /*
@@ -42,6 +43,26 @@ public class xArray {
         // Arrays.fill
         boolean[] visited = new boolean[5];
         Arrays.fill(visited, false);
+    }
+
+    static void Array2d() {
+        // 2차원 행렬
+        // custom sort with Comparator 구현
+        // Greedy 예시: 회의 시간 문제
+        int[][] meetings = { { 1, 4 }, { 2, 3 }, { 3, 5 }, { 4, 6 }, { 5, 7 } };
+        Arrays.sort(meetings, Comparator.comparingInt(o -> o[1])); // 종료 시간 기준 정렬
+
+        int cnt = 0;
+        int lastEndTime = 0;
+
+        for (int[] meeting : meetings) {
+            if (meeting[0] >= lastEndTime) {
+                cnt++;
+                lastEndTime = meeting[1];
+            }
+        }
+
+        System.out.println("최대 회의 개수" + cnt);
     }
 }
 

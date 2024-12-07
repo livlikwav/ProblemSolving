@@ -1,6 +1,7 @@
 package Docs.JavaGuide.DataStructure;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class xHash {
     /*
@@ -8,6 +9,7 @@ public class xHash {
      * hm.remove(key)
      * hm.clear()
      * hm.size()
+     * hm.entrySet()
      * hm.keySet()
      * hm.values()
      * hm.getOrDefault(key, defaultVal)
@@ -23,5 +25,17 @@ public class xHash {
         for (String key : wordCount.keySet()) {
             System.out.println(key + ": " + wordCount.get(key));
         }
+
+        // k,v loop
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+            if (entry.getValue() == 1) {
+                System.out.println("Key: " + entry.getKey());
+            }
+        }
+
+        // k,v loop with Java 8 Stream
+        wordCount.entrySet().stream()
+                .filter(entry -> entry.getValue() == 1)
+                .forEach(entry -> System.out.println("Key: " + entry.getKey()));
     }
 }
